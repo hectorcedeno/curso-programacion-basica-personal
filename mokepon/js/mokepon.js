@@ -83,7 +83,7 @@ function combate() {
   // COMBATE
     if (ataqueEnemigo == ataqueJugador) {
         crearMensaje("¡Empataron! 🫤");
-    } else if (
+    } else if ( //debe cumplirse una de las tres condiciones que siguen, con el || que sugnifica 'o'
         (ataqueJugador == 'Agua 💧' && ataqueEnemigo == 'Fuego 🔥') ||
         (ataqueJugador == 'Tierra 🌱' && ataqueEnemigo == 'Agua 💧') ||
         (ataqueJugador == 'Fuego 🔥' && ataqueEnemigo == 'Tierra 🌱')
