@@ -51,17 +51,17 @@ function seleccionarMascotaEnemigo(){
 }
 
 function ataqueFuego(){
-    ataqueJugador = '🔥'
+    ataqueJugador = 'Fuego 🔥'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua(){
-    ataqueJugador = '💧'
+    ataqueJugador = 'Agua 💧'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra(){
-    ataqueJugador = '🌱'
+    ataqueJugador = 'Tierra 🌱'
     ataqueAleatorioEnemigo()
 }
 
@@ -69,17 +69,38 @@ function ataqueAleatorioEnemigo(){
     let ataqueAleatorio = aleatorio(1,3)
 
     if (ataqueAleatorio == 1) {
-        ataqueEnemigo = '🔥'
+        ataqueEnemigo = 'Fuego 🔥'
     } else if (ataqueAleatorio == 2) {
-        ataqueEnemigo = '💧'
+        ataqueEnemigo = 'Agua 💧'
     } else {
-        ataqueEnemigo = '🌱'
+        ataqueEnemigo = 'Tierra 🌱'
     }
 
+    combate()
 }
 
-function crearMensaje() {
+function combate() {
+  // COMBATE
+    if (ataqueEnemigo == ataqueJugador) {
+        crearMensaje("¡Empataron! 🫤");
+    } else if (
+        (ataqueJugador == 'Agua 💧' && ataqueEnemigo == 'Fuego 🔥') ||
+        (ataqueJugador == 'Tierra 🌱' && ataqueEnemigo == 'Agua 💧') ||
+        (ataqueJugador == 'Fuego 🔥' && ataqueEnemigo == 'Tierra 🌱')
+    ) {
+        crearMensaje("¡Ganaste la batalla! 🥳")
+    } else {
+        crearMensaje("¡Perdiste! 😱😥");
+    }
+}
+
+function crearMensaje(resultado) {
+    let sectionMensajes = document.getElementById('mensajes')
     
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + '- ' + resultado
+
+    sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min,max){
