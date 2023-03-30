@@ -1,6 +1,8 @@
 // Variables globales
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 //Primero se crean las funciones que se van a ejecutar cuando cargue toda la página.
 
@@ -80,6 +82,9 @@ function ataqueAleatorioEnemigo(){
 }
 
 function combate() {
+    // Se declaran las variables para cambiar el HTML donde se muestran las vidas de los jugadores
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
   // COMBATE
     if (ataqueEnemigo == ataqueJugador) {
         crearMensaje("¡Empataron! 🫤");
