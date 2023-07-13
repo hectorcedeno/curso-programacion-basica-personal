@@ -103,6 +103,8 @@ function combate() {
     }
 
     revisarVidas ()
+
+    
 }
 
 // Función para revisar vidas de ambos Pokemon
