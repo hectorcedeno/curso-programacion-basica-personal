@@ -7,6 +7,13 @@ let vidasEnemigo = 3
 //Primero se crean las funciones que se van a ejecutar cuando cargue toda la página.
 
 function iniciarJuego(){
+    // Solo mostramos la sección para escoger pokemon, ocultamos la sección para escoger ataque y el botón reiniciar
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+    
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let botonMascotaJugador = document.getElementById('boton-mascota') 
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
 
@@ -17,9 +24,19 @@ function iniciarJuego(){
     botonAgua.addEventListener('click', ataqueAgua)
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarMascotaJugador(){
+     // Ocultamos la sección donde se escoge el pokemon
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+
+    // Mostramos la sección para escoger pokemon quitándole el display:none a la sección 'seleccionar-ataque'
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block'
+
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
@@ -104,7 +121,6 @@ function combate() {
 
     revisarVidas ()
 
-    
 }
 
 // Función para revisar vidas de ambos Pokemon
@@ -125,6 +141,7 @@ function crearMensaje(resultado) {
     sectionMensajes.appendChild(parrafo)
 }
 
+// Creamos el párrafo para el resultado final
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById('mensajes')
     
@@ -132,6 +149,23 @@ function crearMensajeFinal(resultadoFinal) {
     parrafo.innerHTML = resultadoFinal
 
     sectionMensajes.appendChild(parrafo)
+
+    // Se deshabilita los botones de ataque luego de que haya terminado el juego
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.disabled = true
+
+    // Se muestra el botón Reiniciar
+    let sectionReiniciar= document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
+}
+
+// Reiniciamos el juego
+function reiniciarJuego(){
+    location.reload()
 }
 
 function aleatorio(min,max){
