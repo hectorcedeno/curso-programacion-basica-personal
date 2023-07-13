@@ -85,7 +85,7 @@ function combate() {
     // Se declaran las variables para cambiar el HTML donde se muestran las vidas de los jugadores
     let spanVidasJugador = document.getElementById('vidas-jugador')
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
-  // COMBATE
+    // COMBATE
     if (ataqueEnemigo == ataqueJugador) {
         crearMensaje("¡Empataron! 🫤");
     } else if ( //debe cumplirse una de las tres condiciones que siguen, con el || que significa 'o'
@@ -94,8 +94,23 @@ function combate() {
         (ataqueJugador == 'Fuego 🔥' && ataqueEnemigo == 'Tierra 🌱')
     ) {
         crearMensaje("¡Ganaste la batalla! 🥳")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
         crearMensaje("¡Perdiste! 😱😥");
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+
+    revisarVidas ()
+}
+
+// Función para revisar vidas de ambos Pokemon
+function revisarVidas(){
+    if (vidasEnemigo == 0) {
+        crearMensajeFinal("Felicitaciones, GANASTE EL JUEGO 🥳")
+    } else if(vidasJugador == 0) {
+        crearMensajeFinal("Lo lamento, PERDISTE EL JUEGO 😭")
     }
 }
 
@@ -108,8 +123,17 @@ function crearMensaje(resultado) {
     sectionMensajes.appendChild(parrafo)
 }
 
+function crearMensajeFinal(resultadoFinal) {
+    let sectionMensajes = document.getElementById('mensajes')
+    
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = resultadoFinal
+
+    sectionMensajes.appendChild(parrafo)
+}
+
 function aleatorio(min,max){
-    return Math.floor(Math.random()*(max-min+1)+min)
+    return Math.floor(Math.random() * (max - min+1) + min)
 }
 
 window.addEventListener('load', iniciarJuego) //nuestro juego/script arranca cuando se haya cargado toda la página.
