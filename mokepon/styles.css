@@ -86,3 +86,8 @@ button{
     margin-top: 30px;
     padding: 12px 60px;
 }
+
+.ataques{
+    display: grid;
+    grid-template-columns: 200px 200px;
+}
