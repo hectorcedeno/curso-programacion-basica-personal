@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mokepon</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./js/mokepon.js"></script>
 </head>
 <body>
 
@@ -17,23 +16,23 @@
         <h2 class="subtitulo">Elige a tu mascota:</h2>
 
         <div class="tarjetas">
+            <input type="radio" name="mascota" id="hipodoge">
             <label class="tarjeta-de-mokepon" for="hipodoge">
                 <p>Hipodoge</p>
                 <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="">
             </label>
-            <input type="radio" name="mascota" id="hipodoge">
-
+            
+            <input type="radio" name="mascota" id="capipepo">
             <label class="tarjeta-de-mokepon" for="capipepo">
                 <p>Capipepo</p>
                 <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="">
             </label>
-            <input type="radio" name="mascota" id="capipepo">
-
+            
+            <input type="radio" name="mascota" id="ratigueya">
             <label class="tarjeta-de-mokepon" for="ratigueya">
                 <p>Ratigueya</p>
                 <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="">
-            </label>
-            <input type="radio" name="mascota" id="ratigueya">
+            </label> 
         </div>
         
         <button id="boton-mascota">Seleccionar</button>
@@ -54,7 +53,7 @@
 
         <div>
             <section id="mensajes">
-                <p id="resultado"></p>
+                <p id="resultado">¡Que gane el mejor!</p>
             </section>
         
             <section id="reiniciar">
@@ -76,6 +75,6 @@
         </div>
         
     </section>
-
+    <script src="./js/mokepon.js"></script>
 </body>
 </html>
