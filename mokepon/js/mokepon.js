@@ -19,6 +19,8 @@ const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 const spanVidasJugador = document.getElementById('vidas-jugador')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 
+//Hacemos un Array con los tres mokepones
+let mokepones = []
 
 // Variables globales
 let ataqueJugador
@@ -42,7 +44,10 @@ let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attac
 
 let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
+//Inyecto un valor en esta variable mediante *push*
+mokepones.push(hipodoge,capipepo,ratigueya)
 
+console.log(mokepones)
 //Primero se crean las funciones que se van a ejecutar cuando cargue toda la página.
 
 function iniciarJuego(){
