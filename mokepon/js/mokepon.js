@@ -34,20 +34,23 @@ class Mokepon {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
+        this.ataques = []
     }
 }
 
-//Con la clase Mokepon creada arriba, se crean los tres objetos (mokepones)
+//Con la clase Mokepon creada arriba, se crean los tres objetos instancia (mokepones). Se llaman objetos instancia porque vienen de una clase
 let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
 
 let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5)
 
 let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
-//Inyecto un valor en esta variable mediante *push*
-mokepones.push(hipodoge,capipepo,ratigueya)
+//Se crea un objeto iterario, solo guarda información
+hipodoge.ataques.push(
+    { nombre : '💧', id : 'boton-agua'},
+    
+)
 
-console.log(mokepones)
 //Primero se crean las funciones que se van a ejecutar cuando cargue toda la página.
 
 function iniciarJuego(){
