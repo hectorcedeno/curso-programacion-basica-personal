@@ -45,10 +45,28 @@ let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attac
 
 let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
-//Se crea un objeto iterario, solo guarda información
+//Se crea un objeto iterario, solo guarda información (Arreglo de ataques para Hipodoge, Capipepo y Ratigueya)
 hipodoge.ataques.push(
     { nombre : '💧', id : 'boton-agua'},
-    
+    { nombre : '💧', id : 'boton-agua'},
+    { nombre : '💧', id : 'boton-agua'},
+    { nombre : '🔥', id : 'boton-fuego'},
+    { nombre : '🌱', id : 'boton-tierra'},
+)
+
+capipepo.ataques.push(
+    { nombre : '🌱', id : 'boton-tierra'},
+    { nombre : '🌱', id : 'boton-tierra'},
+    { nombre : '🌱', id : 'boton-tierra'},
+    { nombre : '💧', id : 'boton-agua'},
+    { nombre : '🔥', id : 'boton-fuego'},
+)
+ratigueya.ataques.push(
+    { nombre : '🔥', id : 'boton-fuego'},
+    { nombre : '🔥', id : 'boton-fuego'},
+    { nombre : '🔥', id : 'boton-fuego'},
+    { nombre : '💧', id : 'boton-agua'},
+    { nombre : '🌱', id : 'boton-tierra'},
 )
 
 //Primero se crean las funciones que se van a ejecutar cuando cargue toda la página.
