@@ -25,6 +25,7 @@ let mokepones = []
 // Variables globales
 let ataqueJugador
 let ataqueEnemigo
+let opcionDeMokepones
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -69,11 +70,26 @@ ratigueya.ataques.push(
     { nombre : '🌱', id : 'boton-tierra'},
 )
 
+mokepones.push(hipodoge,capipepo,ratigueya)
+
+
 //Primero se crean las funciones que se van a ejecutar cuando cargue toda la página.
 
 function iniciarJuego(){
     // Solo mostramos la sección para escoger pokemon, ocultamos la sección para escoger ataque y el botón reiniciar
     sectionSeleccionarAtaque.style.display = 'none'
+
+    //Usamos forEach para que por cada uno de nuestros elementos del arreglo de Mokepones haga algo.
+    mokepones.forEach((mokepon) => {
+        opcionDeMokepones = `
+        <input type="radio" name="mascota" id="${mokepon.nombre}">
+        <label class="tarjeta-de-mokepon" for="${mokepon.nombre}">
+            <p>${mokepon.nombre}</p>
+            <img src="${mokepon.foto}" alt="${mokepon.nombre}">
+        </label>
+        `
+    })
+
     sectionReiniciar.style.display = 'none'
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
 
